@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dummy Webpage</title>
+</head>
+<body>
+  <h1>Welcome to my Dummy Webpage</h1>
+  <div id="data-container"></div>
+
+  <script>
+    // Make an AJAX request to the mock API and populate the data-container element with the response
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://demo0897063.mockable.io/abc', true);
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        var responseData = JSON.parse(xhr.responseText);
+        var dataContainer = document.getElementById('data-container');
+        // Customize how you want to display the data on the webpage
+        dataContainer.innerHTML = '<p>' + responseData.message + '</p>';
+      }
+    };
+    xhr.send();
+  </script>
+</body>
+</html>
